@@ -60,6 +60,10 @@
     
  }
 
+.nav__main ul.nav__menu-rigth{
+  margin-right: 30px;
+}
+
  /* SHOWCASE */
  hr{
    margin: 10px 0;
@@ -81,7 +85,6 @@
    font-size: 80px;
    color: #fff;
    margin-bottom: 90px;
-   filter: opacity(1);
  }
 
  .showcase p {
@@ -107,6 +110,20 @@
  .btn:hover{
    background: #616161;
    color: #232323;
+ }
+
+ .menu__btn {
+  position: absolute;
+  cursor: pointer;
+  top: 17px;
+  right: 13px;
+  z-index: 2;
+  font-size: 1.3rem;
+  display: none;
+ }
+ 
+ .nav__main ul.nav__main-menu.show{
+  transform: translate(-20px);
  }
 
  /* NEWS CARDS */
@@ -227,7 +244,7 @@
   padding-bottom: 20px;
   filter: opacity(.8);  
 }
-
+/* TABLET */
 @media (max-width: 768px){
 
   .nav__main ul.nav__main-menu{
@@ -236,8 +253,10 @@
     top: 0;
     left: 0;
     background: #000f21e3;
-    height: 80%;
-    transform: translateX(-20px);
+    height: 100%;
+    transform: translateX(-400px);
+    transition: transform .5s ease-in-out;
+    z-index: 10;
   }
   .news__cards {
     grid-template-columns: repeat(2, 1fr);
@@ -248,5 +267,25 @@
   .nav__brand{
     margin: 0 0 0 120px;
   }
+  .menu__btn{
+    display: inline;
+  }
 }
-
+ /* MOBILE */
+ @media (max-width: 425px){
+    .news__cards{
+      grid-template-columns: 1fr;
+    }
+    .content{
+      width: 100%;
+      height: 100px;
+    }
+    .content p {
+      font-size: 13px;
+    }
+    .showcase p{
+      font-size: 15px;
+      margin: 1px auto;
+    }
+   
+  }
